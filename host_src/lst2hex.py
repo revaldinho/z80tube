@@ -5,6 +5,7 @@ import sys
 
 
 debug=0
+bytesperline=32
 
 code_re = re.compile("([0-9a-f]+):\s*([0-9a-f]{8}.*)")
 hex_re  = re.compile("^[0-9a-f]{8}$")
@@ -35,14 +36,14 @@ if debug:
 for d in databytes:
   print ("%02X"%d, end="")
   idx+=1  
-  if idx % 16==0:
+  if idx % bytesperline==0:
      print(chr(13))
 
      if debug:
          adr+=8           
          print ("%06X: " % adr, end="")
      
-if ((idx-1)%32 != 0):
+if ((idx-1)%bytesperline != 0):
     print(chr(13))
 print(chr(26))
 
