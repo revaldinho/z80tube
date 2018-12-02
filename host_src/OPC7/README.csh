@@ -1,19 +1,21 @@
 #!/bin/tcsh -f
 
 iDSK tubedev.dsk -n
-iDSK tubedev.dsk -i ../TUBE6.ASC
+iDSK tubedev.dsk -i ../TUBE7.ASC
 
-foreach f ( e-spigot-rev sieve bigsieve )
-    python ../lst2data.py ../../../opc/opc7/tests/${f}.lst > ${f}.asc
-    iDSK tubedev.dsk -i ${f}.asc
+foreach f ( e-spigot-rev pi-spigot-rev sieve bigsieve nqueens math32 )
+    python ../lst2hex.py ../../../opc/opc7/tests/${f}.lst > ${f}.hex
+    iDSK tubedev.dsk -i ${f}.hex
 end
 
 
+# BCPL tests 
 foreach f ( \
-    hello \
-    fact )
-    python ../lst2data.py ../../../opc/opc7/bcpltests/${f}.lst > ${f}.asc
-    iDSK tubedev.dsk -i ${f}.asc
-end
+     apfel \
+     hello \
+     fact )
+     python ../lst2hex.py ../../../opc/opc7/bcpltests/${f}.lst > ${f}.hex
+     iDSK tubedev.dsk -i ${f}.hex
+ end
 
 
