@@ -10,10 +10,7 @@ end
 
 
 # BCPL tests 
-foreach f ( \
-     apfel \
-     hello \
-     fact )
+foreach f ( apfel enig hello fact )
      python ../lst2hex.py ../../../opc/opc7/bcpltests/${f}.lst > ${f}.hex
      iDSK tubedev.dsk -i ${f}.hex
  end
