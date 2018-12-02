@@ -1,7 +1,7 @@
 #!/bin/tcsh -f
 
 iDSK tubedev.dsk -n
-iDSK tubedev.dsk -i ../TUBE7.ASC
+iDSK tubedev.dsk -i ../TUBE.ASC
 
 foreach f ( e-spigot-rev pi-spigot-rev sieve bigsieve nqueens math32 )
     python ../lst2hex.py ../../../opc/opc7/tests/${f}.lst > ${f}.hex
