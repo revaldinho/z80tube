@@ -6,7 +6,7 @@
 ## -- unused -- PIN "PI_GPIO_16"	LOC = PIN4
 ## -- unused -- PIN "PI_GPIO_19"	LOC = PIN5
 ## -- unused -- PIN "PI_GPIO_13"	LOC = PIN6
-## -- unused -- PIN "PI_GPIO_12"	LOC = PIN7;
+## -- unused -- PIN "PI_GPIO_12"	LOC = PIN7
 ## PIN "VSS"       	LOC = PIN8;  # gnd1
 PIN "CLK"       	LOC = PIN9;  # gck1
 ## -- unused -- PIN "PI_GPIO_06"	LOC = PIN10; # gck2
@@ -31,14 +31,16 @@ PIN "TUBE_INT_B"	LOC = PIN26; # PI_GPIO_15 (not connected on PiTubeDirect)
 ## PIN "TMS"		LOC = PIN29; # tms    
 ## PIN "TCK"		LOC = PIN30; # tck
 ## -- unused -- PIN "PI_GPIO_14"	LOC = PIN31;
-## -- unused -- PIN "PI_GPIO_04"	LOC = PIN32;
+
+PIN "TUBE_RST_B"	LOC = PIN32; # PI_GPIO_04
+
 PIN "TUBE_ADR[2]"	LOC = PIN33; # PI_GPIO_03 (PI_GPIO_1 on early models)
 PIN "TUBE_ADR[1]"	LOC = PIN34; # PI_GPIO_02 (PI_GPIO_0 on early models)
-PIN "PMOD_GPIO[7]"       LOC = PIN35; # 
+PIN "PMOD_GPIO[7]"      LOC = PIN35; # 
 PIN "PMOD_GPIO[6]"	LOC = PIN36;
 PIN "PMOD_GPIO[5]"	LOC = PIN37;
-## PIN "VDD"	        LOC = PIN38; # vccint1
-PIN "TUBE_RST_B"	LOC = PIN39; # PMOD_GPIO_4
+## PIN "VDD"	        LOC = PIN38; # vccint
+PIN "PMOD_GPIO[4]"	LOC = PIN39;
 PIN "PMOD_GPIO[3]"	LOC = PIN40;
 PIN "PMOD_GPIO[2]"	LOC = PIN41;
 ## PIN "VSS"	        LOC = PIN42; # gnd4

@@ -4,8 +4,6 @@
 // Tube registers are &FC10-&FC17
 //
 
-`define PMOD_INPUT_REG      1
-
 // Upper 12 bits oply
 `define PORT_ID_BASE 	   16'hFC10
 `define PORT_ID_BASE_TOP12 16'hFC1
@@ -93,9 +91,6 @@ module z80tube(
   reg                 rd_b_q;    
   reg [7:0]           pmod_dir_f_q;
   reg [7:0]           pmod_dout_f_q;
-`ifdef PMOD_INPUT_REG
-  reg [7:0] pmod_din_q;
-`endif  
   reg [7:0]           data_r;
   reg                 data_en_r;
   reg [1:0]           reset_b_q;
@@ -116,8 +111,11 @@ module z80tube(
   assign TUBE_RNW_B = IOREQ_B | WR_B;
   assign TUBE_DATA = ( !wr_b_q & ((state_f_q==S1)|(state_f_q==S2)) & posen_q ) ? DATA : 8'bz;
 
-  // Send Tube a reset on start up but allow user to cause a reset by writing '0' to PMOD_GPIO[0] also 
-  assign TUBE_RST_B = reset_b_w & ((pmod_dir_f_q[0]) ? pmod_dout_f_q[0]: 1'b1) ; 
+  // Send Tube a reset on start up 
+  assign TUBE_RST_B = reset_b_w ; 
+
+  // PMOD port not implemented on Z80Tube Card
+  assign PMOD_GPIO = 8'bz;
   
   // HOST - drive databus on reads
   assign DATA = ( data_en_r ) ? data_r : 8'bzzzzzzzz ;
@@ -125,26 +123,11 @@ module z80tube(
   // Synchronized reset release to posedge of clock
   assign reset_b_w = RESET_B & reset_b_q[0];
 
-//   assign PMOD_GPIO[7] = (pmod_dir_f_q[7]) ? pmod_dout_f_q[7] : 1'bz;
-//   assign PMOD_GPIO[6] = (pmod_dir_f_q[6]) ? pmod_dout_f_q[6] : 1'bz;
-//   assign PMOD_GPIO[5] = (pmod_dir_f_q[5]) ? pmod_dout_f_q[5] : 1'bz;
-//   assign PMOD_GPIO[4] = (pmod_dir_f_q[4]) ? pmod_dout_f_q[4] : 1'bz;
-  assign PMOD_GPIO[7:4] = 4'bz;  
-  assign PMOD_GPIO[3] = (pmod_dir_f_q[3]) ? pmod_dout_f_q[3] : 1'bz;
-  assign PMOD_GPIO[2] = (pmod_dir_f_q[2]) ? pmod_dout_f_q[2] : 1'bz;
-  assign PMOD_GPIO[1] = (pmod_dir_f_q[1]) ? pmod_dout_f_q[1] : 1'bz;
-  assign PMOD_GPIO[0] = (pmod_dir_f_q[0]) ? pmod_dout_f_q[0] : 1'bz;
-
-  
   // Data mux to service IO Reads by the CPC Z80 Host
   always @ ( * )
     if ( !IOREQ_B & !RD_B & port_select )
       case (ADR[3:0])
-`ifdef PMOD_INPUT_REG        
-        `DATA_REG_ID: { data_en_r, data_r } = { 1'b1, pmod_din_q } ;
-`else        
         `DATA_REG_ID: { data_en_r, data_r } = { 1'b1, PMOD_GPIO } ;
-`endif        
         `DIR_REG_ID: { data_en_r, data_r } = { 1'b1, pmod_dir_f_q } ;
         default: { data_en_r, data_r } = { 1'b1, TUBE_DATA } ;
       endcase
@@ -172,11 +155,6 @@ module z80tube(
   end
   
   always @ (posedge CLK ) begin
-`ifdef PMOD_INPUT_REG    
-    if ( !IOREQ_B & !RD_B & rd_b_q) begin
-      pmod_din_q <= PMOD_GPIO;
-    end
-`endif    
     posen_q <= negen_f_q;
     wr_b_q  <= WR_B;
     rd_b_q  <= RD_B; 
