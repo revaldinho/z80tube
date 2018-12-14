@@ -1,4 +1,4 @@
-project_name = z80tube
+project_name ?= z80tube
 target ?= xc9572-10-PC84
 # Alternative target = xc95108-10-PC84
 
