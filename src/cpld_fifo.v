@@ -43,6 +43,57 @@
  * 3 possible re-implementation in (cheap) 74 series components or mixed
  *   74 series + cheaper smaller CPLD
  * 
+ * 
+ * FIFO scheme is changed to be more similar to the cpc-cplink scheme using 74HC40105 FIFOs.
+ * 
+ * Changes are on the slave side mainly.
+ * 
+ * slave_dir and slave_dor are permanently driven and signal buffers are either ready for input
+ * data or output data respectively.
+ * 
+ * Idle states
+ * - slave_wr = low
+ * - slave_rd_b = high
+ * 
+ * 
+ * to write a byte from the slave
+ * 
+ * 1. check that slave_dir is high
+ * 2. drive byte onto data lines
+ * 3. drive slave_wr high
+ * 4. waive for slave_dir to go low
+ * 5. drive slave_wr low
+ * 
+ * to read a byte from the slave
+ * 
+ * 1. check that slave_dor is high
+ * 2. drive slave_rd_b low
+ * 3. read data from data lines
+ * 4. wait until slave_dor is low
+ * 5. drive slave_rd_b high
+ * 
+ * See the UCF file for definitive Pi pin assignments
+ * 
+ * grep slave cpld_fifo.ucf 
+ * 
+ * PIN "slave_data[0]"	LOC = PIN13; # PI_GPIO_08
+ * PIN "slave_data[3]"	LOC = PIN14; # PI_GPIO_11
+ * PIN "slave_data[7]"	LOC = PIN15; # PI_GPIO_25
+ * PIN "slave_data[1]"	LOC = PIN17; # PI_GPIO_09
+ * PIN "slave_data[2]"	LOC = PIN18; # PI_GPIO_10
+ * PIN "slave_data[6]"	LOC = PIN19; # PI_GPIO_24
+ * PIN "slave_data[5]"	LOC = PIN20; # PI_GPIO_23
+ * PIN "slave_data[4]"	LOC = PIN21; # PI_GPIO_22
+ * PIN "slave_dor"	LOC = PIN23; # PI_GPIO_27 (PI_GPIO_21 on early models)
+ * PIN "slave_dir"	LOC = PIN24; # PI_GPIO_18
+ * PIN "slave_rd_b"	LOC = PIN25; # PI_GPIO_17
+ * PIN "slave_wr"	LOC = PIN26; # PI_GPIO_15 (not connected on PiTubeDirect)
+ * PIN "slave_unused"	LOC = PIN33; # PI_GPIO_03 (PI_GPIO_1 on early models)
+ * 
+ * As on the original z80tube assignments all pi facing connections are on the 
+ * first 26 pins to be compatible with the original Pi (model1) and the IO board
+ * for the Pi 2 inside the Fuze-T2 keyboard.
+ * 
  */
 
 module lvc374(
