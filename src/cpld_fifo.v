@@ -1,3 +1,50 @@
+/*
+ * This code is part of the z80tube project for interfacing RaspberryPI or Acorn Second Processors
+ * to an Amstrad CPC computer
+ * 
+ * https://github.com/revaldinho/z80tube
+ * 
+ * Copyright (C) 2018 Revaldinho
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+
+/*
+ * This is work in progress to explore a simpler latch based interface between Pi and CPC
+ * for parallel data transfers.
+ * 
+ * Code is written so that it might be broken down into 74 series components later.
+ * 
+ * Following modules are implemented
+ * 
+ * - cpld_fifo = top level for use with the z80tube board
+ * - glue      = possibly for implementation in a small XC9536-PC44 or in 74 series logic
+ * - lvc374    = replace with a real 74lvc374 in a discrete implementation
+ * - nand8     = replace with a real 74HCT30 in a discrete implementation
+ * 
+ * Work in progress
+ * 
+ * 1 debugging this code standalone (now)
+ * 2 integrating this code with the z80tube to have both available in the 
+ *   same CPLD firmware and switchable by the CPC host
+ * 3 possible re-implementation in (cheap) 74 series components or mixed
+ *   74 series + cheaper smaller CPLD
+ * 
+ */
+
 module lvc374(
               input clk,
               input oeb,
@@ -100,6 +147,7 @@ module cpld_fifo(
                  input	rd_b,
                  input	slave_rd_b,
                  input	slave_wr,
+                 input  slave_unused,
                  
                  inout [7:0]	host_data,
                  inout [7:0]	slave_data,

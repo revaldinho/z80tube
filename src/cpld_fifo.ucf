@@ -1,4 +1,8 @@
-# Pin Assignments for FIFO standalone in Z80Tube PC88 CPLD but using Pi Pins available for the Z80Tube application
+
+
+
+# Pin Assignments for FIFO standalone in Z80Tube PC88 CPLD but using the same Pi Pins already available in the Z80Tube application
+# (functions will be overlaid in a combined firmware).
 
 ## -- unused -- PIN "PI_GPIO_21"	LOC = PIN1
 ## -- unused -- PIN "PI_GPIO_20"	LOC = PIN2
@@ -22,10 +26,10 @@ PIN "slave_data[6]"	LOC = PIN19; # PI_GPIO_24
 PIN "slave_data[5]"	LOC = PIN20; # PI_GPIO_23
 PIN "slave_data[4]"	LOC = PIN21; # PI_GPIO_22
 ## PIN "VDD_IO"	        LOC = PIN22; # vccio1
-PIN "slave_dor"	LOC = PIN23; # PI_GPIO_27 (PI_GPIO_21 on early models)
-PIN "slave_dir"	LOC = PIN24; # PI_GPIO_18
-PIN "slave_rd_b"	        LOC = PIN25; # PI_GPIO_17
-PIN "slave_wr"	LOC = PIN26; # PI_GPIO_15 (not connected on PiTubeDirect)
+PIN "slave_dor"	        LOC = PIN23; # PI_GPIO_27 (PI_GPIO_21 on early models)
+PIN "slave_dir"	        LOC = PIN24; # PI_GPIO_18
+PIN "slave_rd_b"	LOC = PIN25; # PI_GPIO_17
+PIN "slave_wr"	        LOC = PIN26; # PI_GPIO_15 (not connected on PiTubeDirect)
 ## PIN "VSS"	        LOC = PIN27; # gnd3
 ## PIN "TDI"		LOC = PIN28; # tdi
 ## PIN "TMS"		LOC = PIN29; # tms    
@@ -34,7 +38,7 @@ PIN "slave_wr"	LOC = PIN26; # PI_GPIO_15 (not connected on PiTubeDirect)
 
 ##PIN "TUBE_RST_B"	LOC = PIN32; # PI_GPIO_04
 
-#PIN "TUBE_ADR[2]"	LOC = PIN33; # PI_GPIO_03 (PI_GPIO_1 on early models)
+PIN "slave_unused"	LOC = PIN33; # PI_GPIO_03 (PI_GPIO_1 on early models)
 #PIN "TUBE_ADR[1]"	LOC = PIN34; # PI_GPIO_02 (PI_GPIO_0 on early models)
 #PIN "PMOD_GPIO[7]"      LOC = PIN35; # 
 #PIN "PMOD_GPIO[6]"	LOC = PIN36;
