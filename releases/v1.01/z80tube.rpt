@@ -1,0 +1,875 @@
+ 
+cpldfit:  version P.20131013                        Xilinx Inc.
+                                  Fitter Report
+Design Name: z80tube                             Date:  7- 8-2019, 11:07PM
+Device Used: XC95108-10-PC84
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+50 /108 ( 46%) 120 /540  ( 22%) 140/216 ( 65%)   21 /108 ( 19%) 53 /69  ( 77%)
+
+** Function Block Resources **
+
+Function    Mcells      FB Inps     Signals     Pterms      IO          
+Block       Used/Tot    Used/Tot    Used        Used/Tot    Used/Tot    
+FB1           6/18       12/36       12           9/90       2/12
+FB2           7/18       31/36       31          19/90       2/12
+FB3          16/18       31/36       31          25/90      10/12
+FB4           6/18       35/36       35          24/90       6/11
+FB5          15/18       31/36       31          43/90       7/11
+FB6           0/18        0/36        0           0/90       0/11
+             -----       -----                   -----       -----     
+             50/108     140/216                 120/540     27/69 
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+Signal 'CLK' mapped onto global clock net GCK1.
+The complement of 'CLK' mapped onto global clock net GCK3.
+Global output enable net(s) unused.
+Global set/reset net(s) unused.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :   25          25    |  I/O              :    48      63
+Output        :    7           7    |  GCK/IO           :     2       3
+Bidirectional :   20          20    |  GTS/IO           :     2       2
+GCK           :    1           1    |  GSR/IO           :     1       1
+GTS           :    0           0    |
+GSR           :    0           0    |
+                 ----        ----
+        Total     53          53
+
+** Power Data **
+
+There are 50 macrocells in high performance mode (MCHP).
+There are 0 macrocells in low power mode (MCLP).
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
+   use the default filename of 'z80tube.ise'.
+INFO:Cpld:994 - Exhaustive fitting is trying pterm limit: 18 and input limit: 18
+*************************  Summary of Mapped Logic  ************************
+
+** 27 Outputs **
+
+Signal                        Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                          Pts   Inps          No.  Type    Use     Mode Rate State
+TUBE_PHI2                     1     2     FB1_16  12~  GCK/I/O O       STD  FAST 
+TUBE_DATA<0>                  2     4     FB1_17  13~  I/O     I/O     STD  FAST 
+DATA<1>                       4     20    FB2_2   71~  I/O     I/O     STD  FAST 
+DATA<0>                       4     20    FB2_3   72~  I/O     I/O     STD  FAST 
+TUBE_DATA<3>                  2     4     FB3_2   14~  I/O     I/O     STD  FAST 
+TUBE_DATA<7>                  2     4     FB3_3   15~  I/O     I/O     STD  FAST 
+TUBE_DATA<1>                  2     4     FB3_5   17~  I/O     I/O     STD  FAST 
+TUBE_DATA<2>                  2     4     FB3_6   18~  I/O     I/O     STD  FAST 
+TUBE_DATA<6>                  2     4     FB3_8   19~  I/O     I/O     STD  FAST 
+TUBE_DATA<5>                  2     4     FB3_9   20~  I/O     I/O     STD  FAST 
+TUBE_DATA<4>                  2     4     FB3_11  21~  I/O     I/O     STD  FAST 
+TUBE_ADR<0>                   1     1     FB3_12  23~  I/O     O       STD  FAST 
+TUBE_RNW_B                    1     2     FB3_14  24~  I/O     O       STD  FAST 
+TUBE_CS_B                     1     14    FB3_15  25~  I/O     O       STD  FAST 
+DATA<7>                       4     20    FB4_9   65~  I/O     I/O     STD  FAST 
+DATA<6>                       4     20    FB4_11  66~  I/O     I/O     STD  FAST 
+DATA<5>                       4     20    FB4_12  67~  I/O     I/O     STD  FAST 
+DATA<4>                       4     20    FB4_14  68~  I/O     I/O     STD  FAST 
+DATA<3>                       4     20    FB4_15  69~  I/O     I/O     STD  FAST 
+DATA<2>                       4     20    FB4_17  70~  I/O     I/O     STD  FAST 
+TUBE_ADR<2>                   1     1     FB5_3   33~  I/O     O       STD  FAST 
+TUBE_ADR<1>                   1     1     FB5_5   34~  I/O     O       STD  FAST 
+TUBE_RST_B                    2     4     FB5_11  39~  I/O     O       STD  FAST 
+PMOD_GPIO<3>                  3     8     FB5_12  40~  I/O     I/O     STD  FAST RESET
+PMOD_GPIO<2>                  3     8     FB5_14  41~  I/O     I/O     STD  FAST RESET
+PMOD_GPIO<1>                  3     8     FB5_15  43~  I/O     I/O     STD  FAST RESET
+PMOD_GPIO<0>                  3     8     FB5_17  44~  I/O     I/O     STD  FAST RESET
+
+** 23 Buried Nodes **
+
+Signal                        Total Total Loc     Pwr  Reg Init
+Name                          Pts   Inps          Mode State
+state_f_q<1>                  1     3     FB1_13  STD  RESET
+reset_b_q<0>                  1     1     FB1_14  STD  RESET
+posen_q                       1     1     FB1_15  STD  RESET
+state_d<0>                    3     4     FB1_18  STD  RESET
+state_f_q<0>                  1     3     FB2_14  STD  RESET
+reset_b_q<1>                  1     1     FB2_15  STD  RESET
+$OpTx$$OpTx$FX_DC$4_INV$378   1     2     FB2_16  STD  
+pmod_dir_f_q<1>               4     8     FB2_17  STD  RESET
+pmod_dir_f_q<0>               4     8     FB2_18  STD  RESET
+wr_b_q                        1     1     FB3_7   STD  RESET
+$OpTx$FX_SC$47                1     17    FB3_10  STD  
+$OpTx$FX_SC$46                1     18    FB3_13  STD  
+$OpTx$$OpTx$FX_DC$42_INV$379  1     16    FB3_16  STD  
+$OpTx$$OpTx$FX_DC$12_INV$377  1     2     FB3_17  STD  
+$OpTx$FX_SC$45                3     17    FB3_18  STD  
+negen_f_q                     1     4     FB5_6   STD  RESET
+state_d<1>                    2     3     FB5_7   STD  RESET
+pmod_dir_f_q<7>               4     8     FB5_8   STD  RESET
+pmod_dir_f_q<6>               4     8     FB5_9   STD  RESET
+pmod_dir_f_q<5>               4     8     FB5_10  STD  RESET
+pmod_dir_f_q<4>               4     8     FB5_13  STD  RESET
+pmod_dir_f_q<3>               4     8     FB5_16  STD  RESET
+pmod_dir_f_q<2>               4     8     FB5_18  STD  RESET
+
+** 26 Inputs **
+
+Signal                        Loc     Pin  Pin     Pin     
+Name                                  No.  Type    Use     
+WAIT_B                        FB1_8   5    I/O     I
+CLK                           FB1_12  9~   GCK/I/O GCK
+RESET_B                       FB2_5   74~  GSR/I/O I
+IOREQ_B                       FB2_8   76~  GTS/I/O I
+RD_B                          FB2_9   77~  GTS/I/O I
+WR_B                          FB2_11  79~  I/O     I
+PMOD_GPIO<4>                  FB2_16  83   I/O     I
+ADR<4>                        FB4_2   57~  I/O     I
+ADR<3>                        FB4_3   58~  I/O     I
+ADR<2>                        FB4_5   61~  I/O     I
+ADR<1>                        FB4_6   62~  I/O     I
+ADR<0>                        FB4_8   63~  I/O     I
+PMOD_GPIO<7>                  FB5_6   35~  I/O     I
+PMOD_GPIO<6>                  FB5_8   36~  I/O     I
+PMOD_GPIO<5>                  FB5_9   37~  I/O     I
+ADR<15>                       FB6_2   45~  I/O     I
+ADR<14>                       FB6_3   46~  I/O     I
+ADR<13>                       FB6_5   47~  I/O     I
+ADR<12>                       FB6_6   48~  I/O     I
+ADR<11>                       FB6_8   50~  I/O     I
+ADR<10>                       FB6_9   51~  I/O     I
+ADR<9>                        FB6_11  52~  I/O     I
+ADR<8>                        FB6_12  53~  I/O     I
+ADR<7>                        FB6_14  54~  I/O     I
+ADR<6>                        FB6_15  55~  I/O     I
+ADR<5>                        FB6_17  56~  I/O     I
+
+Legend:
+Pin No. - ~ - User Assigned
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X(@)         - Signal used as input (wire-AND input) to the macrocell logic.
+               The number of Signals Used may exceed the number of FB Inputs
+               Used due to wire-ANDing in the switch matrix.
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+Number of function block inputs used/remaining:               12/24
+Number of signals used by logic mapping into function block:  12
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB1_1         (b)     
+(unused)              0       0     0   5     FB1_2   1     I/O     
+(unused)              0       0     0   5     FB1_3   2     I/O     
+(unused)              0       0     0   5     FB1_4         (b)     
+(unused)              0       0     0   5     FB1_5   3     I/O     
+(unused)              0       0     0   5     FB1_6   4     I/O     
+(unused)              0       0     0   5     FB1_7         (b)     
+(unused)              0       0     0   5     FB1_8   5     I/O     I
+(unused)              0       0     0   5     FB1_9   6     I/O     
+(unused)              0       0     0   5     FB1_10        (b)     
+(unused)              0       0     0   5     FB1_11  7     I/O     
+(unused)              0       0     0   5     FB1_12  9     GCK/I/O GCK
+state_f_q<1>          1       0     0   4     FB1_13        (b)     (b)
+reset_b_q<0>          1       0     0   4     FB1_14  10    GCK/I/O (b)
+posen_q               1       0     0   4     FB1_15  11    I/O     (b)
+TUBE_PHI2             1       0     0   4     FB1_16  12~   GCK/I/O O
+TUBE_DATA<0>          2       0     0   3     FB1_17  13~   I/O     I/O
+state_d<0>            3       0     0   2     FB1_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: IOREQ_B            5: negen_f_q           9: state_d<1> 
+  2: RESET_B            6: posen_q.LFBK       10: state_f_q<0> 
+  3: DATA<0>.PIN        7: reset_b_q<0>.LFBK  11: state_f_q<1>.LFBK 
+  4: WAIT_B             8: reset_b_q<1>       12: wr_b_q 
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+state_f_q<1>         .X....X.X............................... 3       3
+reset_b_q<0>         .......X................................ 1       1
+posen_q              ....X................................... 1       1
+TUBE_PHI2            ....XX.................................. 2       2
+TUBE_DATA<0>         ..X..X....XX............................ 4       4
+state_d<0>           X..X.....XX............................. 4       4
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB2  ***********************************
+Number of function block inputs used/remaining:               31/5
+Number of signals used by logic mapping into function block:  31
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB2_1         (b)     
+DATA<1>               4       0     0   1     FB2_2   71~   I/O     I/O
+DATA<0>               4       0     0   1     FB2_3   72~   I/O     I/O
+(unused)              0       0     0   5     FB2_4         (b)     
+(unused)              0       0     0   5     FB2_5   74    GSR/I/O I
+(unused)              0       0     0   5     FB2_6   75    I/O     
+(unused)              0       0     0   5     FB2_7         (b)     
+(unused)              0       0     0   5     FB2_8   76    GTS/I/O I
+(unused)              0       0     0   5     FB2_9   77    GTS/I/O I
+(unused)              0       0     0   5     FB2_10        (b)     
+(unused)              0       0     0   5     FB2_11  79    I/O     I
+(unused)              0       0     0   5     FB2_12  80    I/O     
+(unused)              0       0     0   5     FB2_13        (b)     
+state_f_q<0>          1       0     0   4     FB2_14  81    I/O     (b)
+reset_b_q<1>          1       0     0   4     FB2_15  82    I/O     (b)
+$OpTx$$OpTx$FX_DC$4_INV$378
+                      1       0     0   4     FB2_16  83    I/O     I
+pmod_dir_f_q<1>       4       0     0   1     FB2_17  84    I/O     (b)
+pmod_dir_f_q<0>       4       0     0   1     FB2_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$FX_DC$42_INV$379  12: ADR<5>            22: RD_B 
+  2: $OpTx$FX_SC$45                13: ADR<6>            23: RESET_B 
+  3: $OpTx$FX_SC$46                14: ADR<7>            24: ADR<0> 
+  4: $OpTx$FX_SC$47                15: ADR<8>            25: DATA<0>.PIN 
+  5: ADR<10>                       16: ADR<9>            26: DATA<1>.PIN 
+  6: ADR<11>                       17: IOREQ_B           27: WR_B 
+  7: ADR<12>                       18: PMOD_GPIO<0>.PIN  28: pmod_dir_f_q<0>.LFBK 
+  8: ADR<13>                       19: PMOD_GPIO<1>.PIN  29: pmod_dir_f_q<1>.LFBK 
+  9: ADR<14>                       20: TUBE_DATA<1>.PIN  30: reset_b_q<0> 
+ 10: ADR<15>                       21: TUBE_DATA<0>.PIN  31: state_d<0> 
+ 11: ADR<4>                       
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+DATA<1>              .X.XXXXXXXXXXXXXX.XX.X.X....X........... 20      20
+DATA<0>              .X.XXXXXXXXXXXXXXX..XX.X...X............ 20      20
+state_f_q<0>         ......................X......XX......... 3       3
+reset_b_q<1>         ......................X................. 1       1
+$OpTx$$OpTx$FX_DC$4_INV$378 
+                     ......................X......X.......... 2       2
+pmod_dir_f_q<1>      X.X...................XX.XX.XX.......... 8       8
+pmod_dir_f_q<0>      X.X...................XXX.XX.X.......... 8       8
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB3  ***********************************
+Number of function block inputs used/remaining:               31/5
+Number of signals used by logic mapping into function block:  31
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB3_1         (b)     
+TUBE_DATA<3>          2       0     0   3     FB3_2   14~   I/O     I/O
+TUBE_DATA<7>          2       0     0   3     FB3_3   15~   I/O     I/O
+(unused)              0       0     0   5     FB3_4         (b)     
+TUBE_DATA<1>          2       0     0   3     FB3_5   17~   I/O     I/O
+TUBE_DATA<2>          2       0     0   3     FB3_6   18~   I/O     I/O
+wr_b_q                1       0     0   4     FB3_7         (b)     (b)
+TUBE_DATA<6>          2       0     0   3     FB3_8   19~   I/O     I/O
+TUBE_DATA<5>          2       0     0   3     FB3_9   20~   I/O     I/O
+$OpTx$FX_SC$47        1       0     0   4     FB3_10        (b)     (b)
+TUBE_DATA<4>          2       0     0   3     FB3_11  21~   I/O     I/O
+TUBE_ADR<0>           1       0     0   4     FB3_12  23~   I/O     O
+$OpTx$FX_SC$46        1       0     0   4     FB3_13        (b)     (b)
+TUBE_RNW_B            1       0     0   4     FB3_14  24~   I/O     O
+TUBE_CS_B             1       0     0   4     FB3_15  25~   I/O     O
+$OpTx$$OpTx$FX_DC$42_INV$379
+                      1       0     0   4     FB3_16  26    I/O     (b)
+$OpTx$$OpTx$FX_DC$12_INV$377
+                      1       0     0   4     FB3_17  31    I/O     (b)
+$OpTx$FX_SC$45        3       0     0   2     FB3_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$FX_DC$12_INV$377.LFBK  12: ADR<6>            22: DATA<2>.PIN 
+  2: $OpTx$$OpTx$FX_DC$4_INV$378        13: ADR<7>            23: DATA<3>.PIN 
+  3: ADR<10>                            14: ADR<8>            24: DATA<4>.PIN 
+  4: ADR<11>                            15: ADR<9>            25: DATA<5>.PIN 
+  5: ADR<12>                            16: IOREQ_B           26: DATA<6>.PIN 
+  6: ADR<13>                            17: RD_B              27: DATA<7>.PIN 
+  7: ADR<14>                            18: ADR<0>            28: WR_B 
+  8: ADR<15>                            19: ADR<1>            29: posen_q 
+  9: ADR<3>                             20: ADR<2>            30: state_f_q<1> 
+ 10: ADR<4>                             21: DATA<1>.PIN       31: wr_b_q.LFBK 
+ 11: ADR<5>                            
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+TUBE_DATA<3>         ......................X.....XXX......... 4       4
+TUBE_DATA<7>         ..........................X.XXX......... 4       4
+TUBE_DATA<1>         ....................X.......XXX......... 4       4
+TUBE_DATA<2>         .....................X......XXX......... 4       4
+wr_b_q               ...........................X............ 1       1
+TUBE_DATA<6>         .........................X..XXX......... 4       4
+TUBE_DATA<5>         ........................X...XXX......... 4       4
+$OpTx$FX_SC$47       ..XXXXXXXXXXXXXXX.XX.................... 17      17
+TUBE_DATA<4>         .......................X....XXX......... 4       4
+TUBE_ADR<0>          .................X...................... 1       1
+$OpTx$FX_SC$46       XXXXXXXXXXXXXXXX..XX.................... 18      18
+TUBE_RNW_B           ...............X...........X............ 2       2
+TUBE_CS_B            ..XXXXXXXXXXXXXX........................ 14      14
+$OpTx$$OpTx$FX_DC$42_INV$379 
+                     ..XXXXXXXXXXXXXX..XX.................... 16      16
+$OpTx$$OpTx$FX_DC$12_INV$377 
+                     .................X.........X............ 2       2
+$OpTx$FX_SC$45       ..XXXXXXXXXXXXXXX.XX.................... 17      17
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB4  ***********************************
+Number of function block inputs used/remaining:               35/1
+Number of signals used by logic mapping into function block:  35
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB4_1         (b)     
+(unused)              0       0     0   5     FB4_2   57    I/O     I
+(unused)              0       0     0   5     FB4_3   58    I/O     I
+(unused)              0       0     0   5     FB4_4         (b)     
+(unused)              0       0     0   5     FB4_5   61    I/O     I
+(unused)              0       0     0   5     FB4_6   62    I/O     I
+(unused)              0       0     0   5     FB4_7         (b)     
+(unused)              0       0     0   5     FB4_8   63    I/O     I
+DATA<7>               4       0     0   1     FB4_9   65~   I/O     I/O
+(unused)              0       0     0   5     FB4_10        (b)     
+DATA<6>               4       0     0   1     FB4_11  66~   I/O     I/O
+DATA<5>               4       0     0   1     FB4_12  67~   I/O     I/O
+(unused)              0       0     0   5     FB4_13        (b)     
+DATA<4>               4       0     0   1     FB4_14  68~   I/O     I/O
+DATA<3>               4       0     0   1     FB4_15  69~   I/O     I/O
+(unused)              0       0     0   5     FB4_16        (b)     
+DATA<2>               4       0     0   1     FB4_17  70~   I/O     I/O
+(unused)              0       0     0   5     FB4_18        (b)     
+
+Signals Used by Logic in Function Block
+  1: $OpTx$FX_SC$45    13: ADR<8>            25: PMOD_GPIO<5> 
+  2: $OpTx$FX_SC$47    14: ADR<9>            26: PMOD_GPIO<6> 
+  3: ADR<10>           15: IOREQ_B           27: PMOD_GPIO<7> 
+  4: ADR<11>           16: PMOD_GPIO<2>.PIN  28: RD_B 
+  5: ADR<12>           17: PMOD_GPIO<3>.PIN  29: ADR<0> 
+  6: ADR<13>           18: TUBE_DATA<7>.PIN  30: pmod_dir_f_q<2> 
+  7: ADR<14>           19: TUBE_DATA<6>.PIN  31: pmod_dir_f_q<3> 
+  8: ADR<15>           20: TUBE_DATA<5>.PIN  32: pmod_dir_f_q<4> 
+  9: ADR<4>            21: TUBE_DATA<4>.PIN  33: pmod_dir_f_q<5> 
+ 10: ADR<5>            22: TUBE_DATA<3>.PIN  34: pmod_dir_f_q<6> 
+ 11: ADR<6>            23: TUBE_DATA<2>.PIN  35: pmod_dir_f_q<7> 
+ 12: ADR<7>            24: PMOD_GPIO<4>     
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+DATA<7>              XXXXXXXXXXXXXXX..X........XXX.....X..... 20      20
+DATA<6>              XXXXXXXXXXXXXXX...X......X.XX....X...... 20      20
+DATA<5>              XXXXXXXXXXXXXXX....X....X..XX...X....... 20      20
+DATA<4>              XXXXXXXXXXXXXXX.....X..X...XX..X........ 20      20
+DATA<3>              XXXXXXXXXXXXXXX.X....X.....XX.X......... 20      20
+DATA<2>              XXXXXXXXXXXXXXXX......X....XXX.......... 20      20
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB5  ***********************************
+Number of function block inputs used/remaining:               31/5
+Number of signals used by logic mapping into function block:  31
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB5_1         (b)     
+(unused)              0       0     0   5     FB5_2   32    I/O     
+TUBE_ADR<2>           1       0     0   4     FB5_3   33~   I/O     O
+(unused)              0       0     0   5     FB5_4         (b)     
+TUBE_ADR<1>           1       0     0   4     FB5_5   34~   I/O     O
+negen_f_q             1       0     0   4     FB5_6   35    I/O     I
+state_d<1>            2       0     0   3     FB5_7         (b)     (b)
+pmod_dir_f_q<7>       4       0     0   1     FB5_8   36    I/O     I
+pmod_dir_f_q<6>       4       0     0   1     FB5_9   37    I/O     I
+pmod_dir_f_q<5>       4       0     0   1     FB5_10        (b)     (b)
+TUBE_RST_B            2       0     0   3     FB5_11  39~   I/O     O
+PMOD_GPIO<3>          3       0     0   2     FB5_12  40~   I/O     I/O
+pmod_dir_f_q<4>       4       0     0   1     FB5_13        (b)     (b)
+PMOD_GPIO<2>          3       0     0   2     FB5_14  41~   I/O     I/O
+PMOD_GPIO<1>          3       0     0   2     FB5_15  43~   I/O     I/O
+pmod_dir_f_q<3>       4       0     0   1     FB5_16        (b)     (b)
+PMOD_GPIO<0>          3       0     0   2     FB5_17  44~   I/O     I/O
+pmod_dir_f_q<2>       4       0     0   1     FB5_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: $OpTx$$OpTx$FX_DC$42_INV$379  12: DATA<5>.PIN           22: pmod_dir_f_q<5>.LFBK 
+  2: $OpTx$FX_SC$46                13: DATA<6>.PIN           23: pmod_dir_f_q<6>.LFBK 
+  3: RESET_B                       14: DATA<7>.PIN           24: pmod_dir_f_q<7>.LFBK 
+  4: ADR<0>                        15: WAIT_B                25: pmod_dout_f_q<0>.LFBK 
+  5: ADR<1>                        16: WR_B                  26: pmod_dout_f_q<1>.LFBK 
+  6: ADR<2>                        17: pmod_dir_f_q<0>       27: pmod_dout_f_q<2>.LFBK 
+  7: DATA<0>.PIN                   18: pmod_dir_f_q<1>       28: pmod_dout_f_q<3>.LFBK 
+  8: DATA<1>.PIN                   19: pmod_dir_f_q<2>.LFBK  29: reset_b_q<0> 
+  9: DATA<2>.PIN                   20: pmod_dir_f_q<3>.LFBK  30: state_f_q<0> 
+ 10: DATA<3>.PIN                   21: pmod_dir_f_q<4>.LFBK  31: state_f_q<1> 
+ 11: DATA<4>.PIN                  
+
+Signal                        1         2         3         4 Signals FB
+Name                0----+----0----+----0----+----0----+----0 Used    Inputs
+TUBE_ADR<2>          .....X.................................. 1       1
+TUBE_ADR<1>          ....X................................... 1       1
+negen_f_q            ..X.........................XXX......... 4       4
+state_d<1>           ..............X..............XX......... 3       3
+pmod_dir_f_q<7>      XXXX.........X.X.......X....X........... 8       8
+pmod_dir_f_q<6>      XXXX........X..X......X.....X........... 8       8
+pmod_dir_f_q<5>      XXXX.......X...X.....X......X........... 8       8
+TUBE_RST_B           ..X.............X.......X...X........... 4       4
+PMOD_GPIO<3>         X.XX.....X.....X...X.......XX........... 8       8
+pmod_dir_f_q<4>      XXXX......X....X....X.......X........... 8       8
+PMOD_GPIO<2>         X.XX....X......X..X.......X.X........... 8       8
+PMOD_GPIO<1>         X.XX...X.......X.X.......X..X........... 8       8
+pmod_dir_f_q<3>      XXXX.....X.....X...X........X........... 8       8
+PMOD_GPIO<0>         X.XX..X........XX.......X...X........... 8       8
+pmod_dir_f_q<2>      XXXX....X......X..X.........X........... 8       8
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB6  ***********************************
+Number of function block inputs used/remaining:               0/36
+Number of signals used by logic mapping into function block:  0
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB6_1         (b)     
+(unused)              0       0     0   5     FB6_2   45    I/O     I
+(unused)              0       0     0   5     FB6_3   46    I/O     I
+(unused)              0       0     0   5     FB6_4         (b)     
+(unused)              0       0     0   5     FB6_5   47    I/O     I
+(unused)              0       0     0   5     FB6_6   48    I/O     I
+(unused)              0       0     0   5     FB6_7         (b)     
+(unused)              0       0     0   5     FB6_8   50    I/O     I
+(unused)              0       0     0   5     FB6_9   51    I/O     I
+(unused)              0       0     0   5     FB6_10        (b)     
+(unused)              0       0     0   5     FB6_11  52    I/O     I
+(unused)              0       0     0   5     FB6_12  53    I/O     I
+(unused)              0       0     0   5     FB6_13        (b)     
+(unused)              0       0     0   5     FB6_14  54    I/O     I
+(unused)              0       0     0   5     FB6_15  55    I/O     I
+(unused)              0       0     0   5     FB6_16        (b)     
+(unused)              0       0     0   5     FB6_17  56    I/O     I
+(unused)              0       0     0   5     FB6_18        (b)     
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+
+$OpTx$$OpTx$FX_DC$12_INV$377 <= (NOT WR_B AND NOT ADR(0));
+
+
+$OpTx$$OpTx$FX_DC$42_INV$379 <= (ADR(3) AND ADR(2) AND ADR(1) AND NOT IOREQ_B AND ADR(4) AND 
+	NOT ADR(6) AND NOT ADR(5) AND NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND 
+	ADR(15) AND ADR(10) AND NOT ADR(8) AND ADR(12) AND ADR(11));
+
+
+$OpTx$$OpTx$FX_DC$4_INV$378 <= (RESET_B AND reset_b_q(0));
+
+
+$OpTx$FX_SC$45 <= ((NOT ADR(3) AND NOT RD_B AND NOT IOREQ_B AND ADR(4) AND NOT ADR(6) AND 
+	NOT ADR(5) AND NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND ADR(15) AND 
+	ADR(10) AND NOT ADR(8) AND ADR(12) AND ADR(11))
+	OR (NOT ADR(2) AND NOT RD_B AND NOT IOREQ_B AND ADR(4) AND NOT ADR(6) AND 
+	NOT ADR(5) AND NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND ADR(15) AND 
+	ADR(10) AND NOT ADR(8) AND ADR(12) AND ADR(11))
+	OR (NOT ADR(1) AND NOT RD_B AND NOT IOREQ_B AND ADR(4) AND NOT ADR(6) AND 
+	NOT ADR(5) AND NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND ADR(15) AND 
+	ADR(10) AND NOT ADR(8) AND ADR(12) AND ADR(11)));
+
+
+$OpTx$FX_SC$46 <= (ADR(3) AND ADR(2) AND ADR(1) AND NOT IOREQ_B AND ADR(4) AND 
+	NOT ADR(6) AND NOT ADR(5) AND NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND 
+	ADR(15) AND ADR(10) AND NOT ADR(8) AND ADR(12) AND ADR(11) AND 
+	$OpTx$$OpTx$FX_DC$4_INV$378 AND $OpTx$$OpTx$FX_DC$12_INV$377.LFBK);
+
+
+$OpTx$FX_SC$47 <= (ADR(3) AND ADR(2) AND ADR(1) AND NOT RD_B AND NOT IOREQ_B AND 
+	ADR(4) AND NOT ADR(6) AND NOT ADR(5) AND NOT ADR(9) AND ADR(14) AND ADR(13) AND 
+	NOT ADR(7) AND ADR(15) AND ADR(10) AND NOT ADR(8) AND ADR(12) AND ADR(11));
+
+
+DATA_I(0) <= ((TUBE_DATA(0).PIN AND $OpTx$FX_SC$45)
+	OR (ADR(0) AND PMOD_GPIO(0).PIN AND $OpTx$FX_SC$47)
+	OR (NOT ADR(0) AND $OpTx$FX_SC$47 AND pmod_dir_f_q(0).LFBK));
+DATA(0) <= DATA_I(0) when DATA_OE(0) = '1' else 'Z';
+DATA_OE(0) <= (NOT RD_B AND NOT IOREQ_B AND ADR(4) AND NOT ADR(6) AND NOT ADR(5) AND 
+	NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND ADR(15) AND ADR(10) AND 
+	NOT ADR(8) AND ADR(12) AND ADR(11));
+
+
+DATA_I(1) <= ((TUBE_DATA(1).PIN AND $OpTx$FX_SC$45)
+	OR (ADR(0) AND PMOD_GPIO(1).PIN AND $OpTx$FX_SC$47)
+	OR (NOT ADR(0) AND $OpTx$FX_SC$47 AND pmod_dir_f_q(1).LFBK));
+DATA(1) <= DATA_I(1) when DATA_OE(1) = '1' else 'Z';
+DATA_OE(1) <= (NOT RD_B AND NOT IOREQ_B AND ADR(4) AND NOT ADR(6) AND NOT ADR(5) AND 
+	NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND ADR(15) AND ADR(10) AND 
+	NOT ADR(8) AND ADR(12) AND ADR(11));
+
+
+DATA_I(2) <= ((TUBE_DATA(2).PIN AND $OpTx$FX_SC$45)
+	OR (ADR(0) AND PMOD_GPIO(2).PIN AND $OpTx$FX_SC$47)
+	OR (NOT ADR(0) AND pmod_dir_f_q(2) AND $OpTx$FX_SC$47));
+DATA(2) <= DATA_I(2) when DATA_OE(2) = '1' else 'Z';
+DATA_OE(2) <= (NOT RD_B AND NOT IOREQ_B AND ADR(4) AND NOT ADR(6) AND NOT ADR(5) AND 
+	NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND ADR(15) AND ADR(10) AND 
+	NOT ADR(8) AND ADR(12) AND ADR(11));
+
+
+DATA_I(3) <= ((TUBE_DATA(3).PIN AND $OpTx$FX_SC$45)
+	OR (ADR(0) AND PMOD_GPIO(3).PIN AND $OpTx$FX_SC$47)
+	OR (NOT ADR(0) AND pmod_dir_f_q(3) AND $OpTx$FX_SC$47));
+DATA(3) <= DATA_I(3) when DATA_OE(3) = '1' else 'Z';
+DATA_OE(3) <= (NOT RD_B AND NOT IOREQ_B AND ADR(4) AND NOT ADR(6) AND NOT ADR(5) AND 
+	NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND ADR(15) AND ADR(10) AND 
+	NOT ADR(8) AND ADR(12) AND ADR(11));
+
+
+DATA_I(4) <= ((TUBE_DATA(4).PIN AND $OpTx$FX_SC$45)
+	OR (ADR(0) AND PMOD_GPIO(4) AND $OpTx$FX_SC$47)
+	OR (NOT ADR(0) AND pmod_dir_f_q(4) AND $OpTx$FX_SC$47));
+DATA(4) <= DATA_I(4) when DATA_OE(4) = '1' else 'Z';
+DATA_OE(4) <= (NOT RD_B AND NOT IOREQ_B AND ADR(4) AND NOT ADR(6) AND NOT ADR(5) AND 
+	NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND ADR(15) AND ADR(10) AND 
+	NOT ADR(8) AND ADR(12) AND ADR(11));
+
+
+DATA_I(5) <= ((TUBE_DATA(5).PIN AND $OpTx$FX_SC$45)
+	OR (ADR(0) AND PMOD_GPIO(5) AND $OpTx$FX_SC$47)
+	OR (NOT ADR(0) AND pmod_dir_f_q(5) AND $OpTx$FX_SC$47));
+DATA(5) <= DATA_I(5) when DATA_OE(5) = '1' else 'Z';
+DATA_OE(5) <= (NOT RD_B AND NOT IOREQ_B AND ADR(4) AND NOT ADR(6) AND NOT ADR(5) AND 
+	NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND ADR(15) AND ADR(10) AND 
+	NOT ADR(8) AND ADR(12) AND ADR(11));
+
+
+DATA_I(6) <= ((TUBE_DATA(6).PIN AND $OpTx$FX_SC$45)
+	OR (ADR(0) AND PMOD_GPIO(6) AND $OpTx$FX_SC$47)
+	OR (NOT ADR(0) AND pmod_dir_f_q(6) AND $OpTx$FX_SC$47));
+DATA(6) <= DATA_I(6) when DATA_OE(6) = '1' else 'Z';
+DATA_OE(6) <= (NOT RD_B AND NOT IOREQ_B AND ADR(4) AND NOT ADR(6) AND NOT ADR(5) AND 
+	NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND ADR(15) AND ADR(10) AND 
+	NOT ADR(8) AND ADR(12) AND ADR(11));
+
+
+DATA_I(7) <= ((TUBE_DATA(7).PIN AND $OpTx$FX_SC$45)
+	OR (ADR(0) AND PMOD_GPIO(7) AND $OpTx$FX_SC$47)
+	OR (NOT ADR(0) AND pmod_dir_f_q(7) AND $OpTx$FX_SC$47));
+DATA(7) <= DATA_I(7) when DATA_OE(7) = '1' else 'Z';
+DATA_OE(7) <= (NOT RD_B AND NOT IOREQ_B AND ADR(4) AND NOT ADR(6) AND NOT ADR(5) AND 
+	NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND ADR(15) AND ADR(10) AND 
+	NOT ADR(8) AND ADR(12) AND ADR(11));
+
+FTCPE_PMOD_GPIO0: FTCPE port map (PMOD_GPIO_I(0),PMOD_GPIO_T(0),NOT CLK,'0','0');
+PMOD_GPIO_T(0) <= ((NOT WR_B AND ADR(0) AND DATA(0).PIN AND RESET_B AND 
+	reset_b_q(0) AND $OpTx$$OpTx$FX_DC$42_INV$379 AND 
+	NOT pmod_dout_f_q(0).LFBK)
+	OR (NOT WR_B AND ADR(0) AND NOT DATA(0).PIN AND RESET_B AND 
+	reset_b_q(0) AND $OpTx$$OpTx$FX_DC$42_INV$379 AND 
+	pmod_dout_f_q(0).LFBK));
+PMOD_GPIO(0) <= PMOD_GPIO_I(0) when PMOD_GPIO_OE(0) = '1' else 'Z';
+PMOD_GPIO_OE(0) <= pmod_dir_f_q(0);
+
+FTCPE_PMOD_GPIO1: FTCPE port map (PMOD_GPIO_I(1),PMOD_GPIO_T(1),NOT CLK,'0','0');
+PMOD_GPIO_T(1) <= ((NOT WR_B AND ADR(0) AND DATA(1).PIN AND RESET_B AND 
+	reset_b_q(0) AND $OpTx$$OpTx$FX_DC$42_INV$379 AND 
+	NOT pmod_dout_f_q(1).LFBK)
+	OR (NOT WR_B AND ADR(0) AND NOT DATA(1).PIN AND RESET_B AND 
+	reset_b_q(0) AND $OpTx$$OpTx$FX_DC$42_INV$379 AND 
+	pmod_dout_f_q(1).LFBK));
+PMOD_GPIO(1) <= PMOD_GPIO_I(1) when PMOD_GPIO_OE(1) = '1' else 'Z';
+PMOD_GPIO_OE(1) <= pmod_dir_f_q(1);
+
+FTCPE_PMOD_GPIO2: FTCPE port map (PMOD_GPIO_I(2),PMOD_GPIO_T(2),NOT CLK,'0','0');
+PMOD_GPIO_T(2) <= ((NOT WR_B AND ADR(0) AND DATA(2).PIN AND RESET_B AND 
+	reset_b_q(0) AND $OpTx$$OpTx$FX_DC$42_INV$379 AND 
+	NOT pmod_dout_f_q(2).LFBK)
+	OR (NOT WR_B AND ADR(0) AND NOT DATA(2).PIN AND RESET_B AND 
+	reset_b_q(0) AND $OpTx$$OpTx$FX_DC$42_INV$379 AND 
+	pmod_dout_f_q(2).LFBK));
+PMOD_GPIO(2) <= PMOD_GPIO_I(2) when PMOD_GPIO_OE(2) = '1' else 'Z';
+PMOD_GPIO_OE(2) <= pmod_dir_f_q(2).LFBK;
+
+FTCPE_PMOD_GPIO3: FTCPE port map (PMOD_GPIO_I(3),PMOD_GPIO_T(3),NOT CLK,'0','0');
+PMOD_GPIO_T(3) <= ((NOT WR_B AND ADR(0) AND DATA(3).PIN AND RESET_B AND 
+	reset_b_q(0) AND $OpTx$$OpTx$FX_DC$42_INV$379 AND 
+	NOT pmod_dout_f_q(3).LFBK)
+	OR (NOT WR_B AND ADR(0) AND NOT DATA(3).PIN AND RESET_B AND 
+	reset_b_q(0) AND $OpTx$$OpTx$FX_DC$42_INV$379 AND 
+	pmod_dout_f_q(3).LFBK));
+PMOD_GPIO(3) <= PMOD_GPIO_I(3) when PMOD_GPIO_OE(3) = '1' else 'Z';
+PMOD_GPIO_OE(3) <= pmod_dir_f_q(3).LFBK;
+
+
+TUBE_ADR(0) <= ADR(0);
+
+
+TUBE_ADR(1) <= ADR(1);
+
+
+TUBE_ADR(2) <= ADR(2);
+
+
+TUBE_CS_B <= NOT ((NOT ADR(3) AND NOT IOREQ_B AND ADR(4) AND NOT ADR(6) AND NOT ADR(5) AND 
+	NOT ADR(9) AND ADR(14) AND ADR(13) AND NOT ADR(7) AND ADR(15) AND ADR(10) AND 
+	NOT ADR(8) AND ADR(12) AND ADR(11)));
+
+
+TUBE_DATA_I(0) <= DATA(0).PIN;
+TUBE_DATA(0) <= TUBE_DATA_I(0) when TUBE_DATA_OE(0) = '1' else 'Z';
+TUBE_DATA_OE(0) <= (NOT wr_b_q AND state_f_q(1).LFBK AND posen_q.LFBK);
+
+
+TUBE_DATA_I(1) <= DATA(1).PIN;
+TUBE_DATA(1) <= TUBE_DATA_I(1) when TUBE_DATA_OE(1) = '1' else 'Z';
+TUBE_DATA_OE(1) <= (state_f_q(1) AND posen_q AND NOT wr_b_q.LFBK);
+
+
+TUBE_DATA_I(2) <= DATA(2).PIN;
+TUBE_DATA(2) <= TUBE_DATA_I(2) when TUBE_DATA_OE(2) = '1' else 'Z';
+TUBE_DATA_OE(2) <= (state_f_q(1) AND posen_q AND NOT wr_b_q.LFBK);
+
+
+TUBE_DATA_I(3) <= DATA(3).PIN;
+TUBE_DATA(3) <= TUBE_DATA_I(3) when TUBE_DATA_OE(3) = '1' else 'Z';
+TUBE_DATA_OE(3) <= (state_f_q(1) AND posen_q AND NOT wr_b_q.LFBK);
+
+
+TUBE_DATA_I(4) <= DATA(4).PIN;
+TUBE_DATA(4) <= TUBE_DATA_I(4) when TUBE_DATA_OE(4) = '1' else 'Z';
+TUBE_DATA_OE(4) <= (state_f_q(1) AND posen_q AND NOT wr_b_q.LFBK);
+
+
+TUBE_DATA_I(5) <= DATA(5).PIN;
+TUBE_DATA(5) <= TUBE_DATA_I(5) when TUBE_DATA_OE(5) = '1' else 'Z';
+TUBE_DATA_OE(5) <= (state_f_q(1) AND posen_q AND NOT wr_b_q.LFBK);
+
+
+TUBE_DATA_I(6) <= DATA(6).PIN;
+TUBE_DATA(6) <= TUBE_DATA_I(6) when TUBE_DATA_OE(6) = '1' else 'Z';
+TUBE_DATA_OE(6) <= (state_f_q(1) AND posen_q AND NOT wr_b_q.LFBK);
+
+
+TUBE_DATA_I(7) <= DATA(7).PIN;
+TUBE_DATA(7) <= TUBE_DATA_I(7) when TUBE_DATA_OE(7) = '1' else 'Z';
+TUBE_DATA_OE(7) <= (state_f_q(1) AND posen_q AND NOT wr_b_q.LFBK);
+
+
+TUBE_PHI2 <= NOT ((NOT negen_f_q AND NOT posen_q.LFBK));
+
+
+TUBE_RNW_B <= NOT ((NOT IOREQ_B AND NOT WR_B));
+
+
+TUBE_RST_B <= ((RESET_B AND NOT pmod_dir_f_q(0) AND reset_b_q(0))
+	OR (RESET_B AND reset_b_q(0) AND pmod_dout_f_q(0).LFBK));
+
+FDCPE_negen_f_q: FDCPE port map (negen_f_q,negen_f_q_D,NOT CLK,'0','0');
+negen_f_q_D <= (RESET_B AND NOT state_f_q(1) AND state_f_q(0) AND 
+	reset_b_q(0));
+
+FDCPE_pmod_dir_f_q0: FDCPE port map (pmod_dir_f_q(0),pmod_dir_f_q_D(0),NOT CLK,'0','0');
+pmod_dir_f_q_D(0) <= ((DATA(0).PIN AND $OpTx$FX_SC$46)
+	OR (WR_B AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(0).LFBK)
+	OR (ADR(0) AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(0).LFBK)
+	OR (RESET_B AND reset_b_q(0) AND 
+	NOT $OpTx$$OpTx$FX_DC$42_INV$379 AND pmod_dir_f_q(0).LFBK));
+
+FDCPE_pmod_dir_f_q1: FDCPE port map (pmod_dir_f_q(1),pmod_dir_f_q_D(1),NOT CLK,'0','0');
+pmod_dir_f_q_D(1) <= ((DATA(1).PIN AND $OpTx$FX_SC$46)
+	OR (WR_B AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(1).LFBK)
+	OR (ADR(0) AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(1).LFBK)
+	OR (RESET_B AND reset_b_q(0) AND 
+	NOT $OpTx$$OpTx$FX_DC$42_INV$379 AND pmod_dir_f_q(1).LFBK));
+
+FDCPE_pmod_dir_f_q2: FDCPE port map (pmod_dir_f_q(2),pmod_dir_f_q_D(2),NOT CLK,'0','0');
+pmod_dir_f_q_D(2) <= ((DATA(2).PIN AND $OpTx$FX_SC$46)
+	OR (WR_B AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(2).LFBK)
+	OR (ADR(0) AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(2).LFBK)
+	OR (RESET_B AND reset_b_q(0) AND 
+	NOT $OpTx$$OpTx$FX_DC$42_INV$379 AND pmod_dir_f_q(2).LFBK));
+
+FDCPE_pmod_dir_f_q3: FDCPE port map (pmod_dir_f_q(3),pmod_dir_f_q_D(3),NOT CLK,'0','0');
+pmod_dir_f_q_D(3) <= ((DATA(3).PIN AND $OpTx$FX_SC$46)
+	OR (WR_B AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(3).LFBK)
+	OR (ADR(0) AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(3).LFBK)
+	OR (RESET_B AND reset_b_q(0) AND 
+	NOT $OpTx$$OpTx$FX_DC$42_INV$379 AND pmod_dir_f_q(3).LFBK));
+
+FDCPE_pmod_dir_f_q4: FDCPE port map (pmod_dir_f_q(4),pmod_dir_f_q_D(4),NOT CLK,'0','0');
+pmod_dir_f_q_D(4) <= ((DATA(4).PIN AND $OpTx$FX_SC$46)
+	OR (WR_B AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(4).LFBK)
+	OR (ADR(0) AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(4).LFBK)
+	OR (RESET_B AND reset_b_q(0) AND 
+	NOT $OpTx$$OpTx$FX_DC$42_INV$379 AND pmod_dir_f_q(4).LFBK));
+
+FDCPE_pmod_dir_f_q5: FDCPE port map (pmod_dir_f_q(5),pmod_dir_f_q_D(5),NOT CLK,'0','0');
+pmod_dir_f_q_D(5) <= ((DATA(5).PIN AND $OpTx$FX_SC$46)
+	OR (WR_B AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(5).LFBK)
+	OR (ADR(0) AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(5).LFBK)
+	OR (RESET_B AND reset_b_q(0) AND 
+	NOT $OpTx$$OpTx$FX_DC$42_INV$379 AND pmod_dir_f_q(5).LFBK));
+
+FDCPE_pmod_dir_f_q6: FDCPE port map (pmod_dir_f_q(6),pmod_dir_f_q_D(6),NOT CLK,'0','0');
+pmod_dir_f_q_D(6) <= ((DATA(6).PIN AND $OpTx$FX_SC$46)
+	OR (WR_B AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(6).LFBK)
+	OR (ADR(0) AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(6).LFBK)
+	OR (RESET_B AND reset_b_q(0) AND 
+	NOT $OpTx$$OpTx$FX_DC$42_INV$379 AND pmod_dir_f_q(6).LFBK));
+
+FDCPE_pmod_dir_f_q7: FDCPE port map (pmod_dir_f_q(7),pmod_dir_f_q_D(7),NOT CLK,'0','0');
+pmod_dir_f_q_D(7) <= ((DATA(7).PIN AND $OpTx$FX_SC$46)
+	OR (WR_B AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(7).LFBK)
+	OR (ADR(0) AND RESET_B AND reset_b_q(0) AND 
+	pmod_dir_f_q(7).LFBK)
+	OR (RESET_B AND reset_b_q(0) AND 
+	NOT $OpTx$$OpTx$FX_DC$42_INV$379 AND pmod_dir_f_q(7).LFBK));
+
+FDCPE_posen_q: FDCPE port map (posen_q,negen_f_q,CLK,'0','0');
+
+FDCPE_reset_b_q0: FDCPE port map (reset_b_q(0),reset_b_q(1),CLK,'0','0');
+
+FDCPE_reset_b_q1: FDCPE port map (reset_b_q(1),RESET_B,CLK,'0','0');
+
+FDCPE_state_d0: FDCPE port map (state_d(0),state_d_D(0),NOT CLK,'0','0');
+state_d_D(0) <= ((NOT IOREQ_B AND NOT state_f_q(0))
+	OR (NOT state_f_q(0) AND state_f_q(1).LFBK)
+	OR (state_f_q(0) AND NOT WAIT_B AND NOT state_f_q(1).LFBK));
+
+FDCPE_state_d1: FDCPE port map (state_d(1),state_d_D(1),NOT CLK,'0','0');
+state_d_D(1) <= ((state_f_q(1) AND NOT state_f_q(0))
+	OR (NOT state_f_q(1) AND state_f_q(0) AND WAIT_B));
+
+FDCPE_state_f_q0: FDCPE port map (state_f_q(0),state_f_q_D(0),NOT CLK,'0','0');
+state_f_q_D(0) <= (RESET_B AND reset_b_q(0) AND state_d(0));
+
+FDCPE_state_f_q1: FDCPE port map (state_f_q(1),state_f_q_D(1),NOT CLK,'0','0');
+state_f_q_D(1) <= (RESET_B AND state_d(1) AND reset_b_q(0).LFBK);
+
+FDCPE_wr_b_q: FDCPE port map (wr_b_q,WR_B,CLK,'0','0');
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE); 
+ FTCPE (Q,D,C,CLR,PRE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XC95108-10-PC84
+
+
+   --------------------------------------------------------------  
+  /11 10 9  8  7  6  5  4  3  2  1  84 83 82 81 80 79 78 77 76 75 \
+ | 12                                                          74 | 
+ | 13                                                          73 | 
+ | 14                                                          72 | 
+ | 15                                                          71 | 
+ | 16                                                          70 | 
+ | 17                                                          69 | 
+ | 18                                                          68 | 
+ | 19                                                          67 | 
+ | 20                                                          66 | 
+ | 21                       XC95108-10-PC84                    65 | 
+ | 22                                                          64 | 
+ | 23                                                          63 | 
+ | 24                                                          62 | 
+ | 25                                                          61 | 
+ | 26                                                          60 | 
+ | 27                                                          59 | 
+ | 28                                                          58 | 
+ | 29                                                          57 | 
+ | 30                                                          56 | 
+ | 31                                                          55 | 
+ | 32                                                          54 | 
+ \ 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 /
+   --------------------------------------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 TIE                              43 PMOD_GPIO<1>                  
+  2 TIE                              44 PMOD_GPIO<0>                  
+  3 TIE                              45 ADR<15>                       
+  4 TIE                              46 ADR<14>                       
+  5 WAIT_B                           47 ADR<13>                       
+  6 TIE                              48 ADR<12>                       
+  7 TIE                              49 GND                           
+  8 GND                              50 ADR<11>                       
+  9 CLK                              51 ADR<10>                       
+ 10 TIE                              52 ADR<9>                        
+ 11 TIE                              53 ADR<8>                        
+ 12 TUBE_PHI2                        54 ADR<7>                        
+ 13 TUBE_DATA<0>                     55 ADR<6>                        
+ 14 TUBE_DATA<3>                     56 ADR<5>                        
+ 15 TUBE_DATA<7>                     57 ADR<4>                        
+ 16 GND                              58 ADR<3>                        
+ 17 TUBE_DATA<1>                     59 TDO                           
+ 18 TUBE_DATA<2>                     60 GND                           
+ 19 TUBE_DATA<6>                     61 ADR<2>                        
+ 20 TUBE_DATA<5>                     62 ADR<1>                        
+ 21 TUBE_DATA<4>                     63 ADR<0>                        
+ 22 VCC                              64 VCC                           
+ 23 TUBE_ADR<0>                      65 DATA<7>                       
+ 24 TUBE_RNW_B                       66 DATA<6>                       
+ 25 TUBE_CS_B                        67 DATA<5>                       
+ 26 TIE                              68 DATA<4>                       
+ 27 GND                              69 DATA<3>                       
+ 28 TDI                              70 DATA<2>                       
+ 29 TMS                              71 DATA<1>                       
+ 30 TCK                              72 DATA<0>                       
+ 31 TIE                              73 VCC                           
+ 32 TIE                              74 RESET_B                       
+ 33 TUBE_ADR<2>                      75 TIE                           
+ 34 TUBE_ADR<1>                      76 IOREQ_B                       
+ 35 PMOD_GPIO<7>                     77 RD_B                          
+ 36 PMOD_GPIO<6>                     78 VCC                           
+ 37 PMOD_GPIO<5>                     79 WR_B                          
+ 38 VCC                              80 TIE                           
+ 39 TUBE_RST_B                       81 TIE                           
+ 40 PMOD_GPIO<3>                     82 TIE                           
+ 41 PMOD_GPIO<2>                     83 PMOD_GPIO<4>                  
+ 42 GND                              84 TIE                           
+
+
+Legend :  NC  = Not Connected, unbonded pin
+         PGND = Unused I/O configured as additional Ground pin
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         VCC  = Dedicated Power Pin
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc95108-10-PC84
+Optimization Method                         : SPEED
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : ON
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Power Mode                                  : STD
+Ground on Unused IOs                        : OFF
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+FASTConnect/UIM optimzation                 : ON
+Local Feedback                              : ON
+Pin Feedback                                : ON
+Input Limit                                 : 18
+Pterm Limit                                 : 18
